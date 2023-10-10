@@ -1,0 +1,75 @@
+<!-- <h1>this is navbar</h1> -->
+<mat-toolbar class="fixed-top" color="black" style="background: #8294C4;">
+  <a
+    routerLink="/"
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu_book</mat-icon>
+  </a>  
+  
+  <span style="text-decoration-color: blue;">Avdhoot Academy</span>
+  <span class="example-spacer"></span>
+  <a
+    *ngIf="!isLoggedIn"
+    [routerLink]="'/login'"
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+  >
+  ☞ Login
+  </a>
+
+  <a
+    *ngIf="!isLoggedIn"
+    [routerLink]="'/signup'"
+    mat-icon-button
+    class="example-icon favorite-icon mr20 ml20"
+    aria-label="Example icon-button with heart icon"
+  >
+
+  ☞ Register
+  </a>
+
+  <a style="margin-left: 20px; margin-right: 10px;"
+  routerLink="/"
+  mat-icon-button
+  class="example-icon"
+  aria-label="Example icon-button with menu icon"
+  >
+
+  ☞ Home
+  </a>
+
+  <a style="margin-left: 20px; margin-right: 40px;"
+  [routerLink]="'/aboutus'"
+  mat-icon-button
+  class="example-icon"
+  aria-label="Example icon-button with menu icon"
+  >
+
+  ☞ About Us
+  </a>
+
+  <a style="margin-right: 40px;margin-left: 10px;"
+  routerLink=""
+  (click)="logout()"
+    *ngIf="isLoggedIn"
+    mat-icon-button
+    class="example-icon favorite-icon mr20 ml20"
+  aria-label="Example icon-button with menu icon"
+  >
+  ☞ Logout
+  </a>
+
+  <button
+    *ngIf="isLoggedIn && user"
+    class="example-icon favorite-icon ml20"
+    mat-button
+    routerLink="/admin/profile"
+    aria-label="Example icon-button with heart icon"
+  >
+    {{ user.username }}
+  </button>
+</mat-toolbar>
